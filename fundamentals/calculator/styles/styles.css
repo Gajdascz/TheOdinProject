@@ -1,0 +1,126 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.page-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+}
+h1, h3 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  cursor: alias;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+  cursor:alias;
+}
+.calculator-container {
+  border: 3px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  max-width: 290px;
+  margin-top: -30px;
+}
+
+.calculator-display-container {
+  border-radius: 0px;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+#calculator-display:disabled {
+  padding: 0;
+  width: 100%;
+  height: 50px;
+  text-align: end;
+  font-size: 40px;
+  background-color: lightblue;
+  padding: 5px;
+  border-top: 1px solid black;
+  border-bottom: 3px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  color:black;
+}
+input:disabled::-webkit-input-placeholder { 
+  color: black;    
+}
+
+.calculator-buttons-container {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+.calculator-row-container {
+  display: flex;
+}
+
+.calculator-row-container > button {
+  padding: 10px;
+  min-width: 56px;
+  font-weight: bolder;
+  font-size: 15px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.calculator-row-container > button:hover {
+  background-color: #dddddd;
+}
+.calculator-row-container > button:disabled:hover {
+  background-color: #EFEFEF4D;
+}
+.button-equate, .button-modulo, .button-factorial,
+.button-percentage, .button-exponentiate, .button-add,
+.button-subtract, .button-multiply, .button-divide {
+  width: 100%;
+}
+
+.button-operator {
+  background-color: orange;
+}
+.button-operator:hover {
+  background-color: orangered !important;
+}
+
+.button-equate {
+  background-color: lightcoral;
+}
+
+.button-equate:hover {
+  background-color: orangered !important;
+
+}
+
+.calculator-information-container {
+  display: flex;
+}
+
+.information-header {
+  text-align: center;
+  cursor: alias;
+  margin: 5px;
+}
+
+.information-list > li {
+  padding: 2px;
+  font-size: 15px;
+}
+
+.copyright-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background-color: lightgray;
+  padding: 25px;
+}
