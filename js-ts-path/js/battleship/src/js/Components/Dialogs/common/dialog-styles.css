@@ -1,0 +1,75 @@
+@import url('../../../../styles/style.css');
+
+.dialog[open] {
+  background-color: var(--color-deep-navy-blue);
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-standard);
+  border-radius: var(--border-radius-standard);
+  width: 50vw;
+  min-width: fit-content;
+}
+.dialog[open]::backdrop {
+  background-color: rgba(0, 9, 17, 0.9);
+}
+
+.dialog-title,
+.dialog-header-primary,
+.dialog-header-secondary {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-header);
+}
+
+.dialog-title {
+  font-size: var(--font-size-xxl);
+  text-align: center;
+}
+.dialog-header-primary {
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+
+.dialog-header-secondary {
+  font-size: var(--font-size-l);
+  margin-bottom: 0.25em;
+}
+
+.white-underline {
+  color: var(--text-white);
+  border-bottom: var(--border-white);
+}
+.green-underline {
+  color: var(--color-vibrant-green);
+  border-bottom: var(--border-green);
+}
+.instructions-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.instructions-button-container {
+  display: flex;
+  gap: var(--gap-small);
+}
+
+.instructions-button-container > button {
+  flex: 1;
+}
+
+.instructions-content-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
+  padding-right: 2em;
+  gap: var(--gap-standard);
+}
+
+.instruction-list-item {
+  color: var(--color-vibrant-green);
+  font-weight: var(--font-weight-bold);
+}
+
+.alternate-player-dialog[open]::backdrop {
+  background-color: black;
+}
