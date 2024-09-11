@@ -1,0 +1,34 @@
+@import url('../../../styles/index.css');
+
+.cv-editors-util-sections {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+}
+
+.util-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-medium);
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--color-primary-accent);
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.util-section-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100%;
+  gap: var(--space-small);
+  padding-top: var(--space-small);
+  padding-bottom: var(--space-small);
+}
+.util-section-buttons > button {
+  flex: 1;
+  padding: var(--space-small);
+  min-width: 70px;
+}

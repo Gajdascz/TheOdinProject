@@ -1,0 +1,41 @@
+@import url('../../styles/index.css');
+
+.cv-editors-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-large);
+  min-width: min-content;
+}
+
+.section-editor-container,
+.cv-section-editors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid var(--color-primary-accent);
+  padding: var(--space-medium);
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.section-editor-container {
+  padding-top: var(--space-large);
+}
+
+.section-editor-header,
+.cv-section-editors-header {
+  position: absolute;
+  background-color: var(--color-background);
+  padding: 0 var(--space-medium) 0 var(--space-medium);
+  top: -0.5em;
+  color: var(--color-primary-accent);
+}
+.cv-section-editors-container {
+  flex: 1;
+  min-width: 100%;
+  max-width: 100%;
+  padding-top: var(--space-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-large);
+}

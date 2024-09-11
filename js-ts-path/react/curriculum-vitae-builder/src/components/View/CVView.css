@@ -1,0 +1,61 @@
+@import url('../../styles/index.css');
+
+section.cv-view {
+  --accent-color: #add8e6;
+  --sidebar-location: 2;
+  --sidebar-right-padding: 0;
+  --sidebar-left-padding: 0.5em;
+  --selected-font: 'atkinson-hyper-legible';
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: min-content auto;
+  background-color: white;
+  box-shadow: var(--view-shadow);
+  color: black;
+  font-family: var(--selected-font);
+  letter-spacing: 0;
+  font-size: 12pt;
+  --header-size: 14pt;
+  --subheader-size: 13pt;
+  --space-from-header: 1em;
+  overflow-x: auto;
+}
+
+.view-list-label,
+.view-text-field-label {
+  font-weight: bold;
+}
+
+.view-list-label {
+  border-bottom: 2px solid black;
+  padding-right: 1em;
+  width: fit-content;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media print {
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: white;
+    color: #000 !important;
+  }
+  .cv-app-container {
+    padding: 0;
+  }
+  .index-footer-container,
+  ::-webkit-scrollbar,
+  section.cv-editors-section,
+  header.index-header {
+    display: none !important;
+  }
+  @page {
+    margin: 1cm;
+    size: auto;
+  }
+}

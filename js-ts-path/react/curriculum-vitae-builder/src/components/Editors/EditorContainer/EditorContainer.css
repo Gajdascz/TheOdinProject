@@ -1,0 +1,35 @@
+@import url('../../../styles/index.css');
+
+.editor-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-large);
+}
+
+.editor-fields-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--space-large);
+}
+
+.drag-container + .editor-fields-container {
+  border-top: 3px solid var(--color-primary-accent);
+}
+.drag-container + .editor-fields-container > .field-wrapper:first-child {
+  padding-top: var(--space-large);
+}
+
+button.add-data-button {
+  width: 50%;
+}
+
+button.save-section-changes-button {
+  width: 50%;
+}
+
+.configurable-section-item-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+}
