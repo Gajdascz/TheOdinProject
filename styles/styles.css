@@ -1,0 +1,291 @@
+
+/* #region ROOT AND DEFAULT STYLING */
+:root {
+  --primary-color: #eef2ff;
+  --primary-accent: #a5b4fc;
+  --secondary-color: #1e1b4b;
+  --secondary-accent: #3730a3;
+  --shadow: 0px 2px 10px #383838;
+  background-color: var(--primary-color);
+
+}
+a {
+  color: var(--primary-color);
+}
+/* #endregion */
+
+/* #region MAIN GRID AND HEADER */
+.grid-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+header {
+  grid-row: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: bolder;
+  font-size: 2.2rem;
+  box-shadow: var(--shadow);
+  cursor: default;
+}
+.add-book-button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 20px;
+  border: 5px solid var(--secondary-accent);
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.add-book-button:hover {
+  background-color: var(--secondary-accent);
+  border-color: var(--primary-accent);
+  color: var(--primary-color);
+}
+main {
+  text-align: center;
+  grid-row: 2;
+  padding: 25px 15px;
+  min-height: 75vh;
+}
+/* #endregion */
+
+/* #region BOOK CARDS */
+section.book-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 20px;
+}
+article.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.3rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 3px solid var(--secondary-accent);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  width: 250px;
+  cursor: default;
+  word-break: break-all;
+
+} 
+.book-card-header {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 10px;
+  justify-content: start;
+}
+.book-card-title {
+  grid-column: 2;
+  grid-row: 1 / 2;
+  font-size: 1.6rem;
+  font-weight: 625;
+}
+.book-card-options-button {
+  padding: 0;
+  border: none;
+  grid-column: 1;
+  grid-row: 1;
+  align-self:baseline;
+  background-color: var(--secondary-color);
+}
+.book-card-options-button:hover {
+  cursor: pointer;
+} 
+.book-card-options-icon {
+  fill: var(--primary-color);
+  width: 25px;
+}
+.book-card-options-icon:hover {
+  fill: var(--primary-accent);
+}
+.card-options-menu {
+  position: absolute;
+  margin-top: 25px;
+}
+.card-options-menu-content {
+  display: none;
+  position: absolute;
+  min-width: max-content;
+
+}
+.book-card-options-button:hover + .card-options-menu > .card-options-menu-content,
+.card-options-menu-content:hover {
+  display: flex;
+  flex-direction: column;
+}
+.edit-card-button,
+.delete-card-button {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-accent);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.edit-card-button:hover,
+.delete-card-button:hover {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-accent);
+  color: var(--secondary-color);
+}
+
+.book-card-information {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: baseline;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: normal;
+  padding-left: 10px;
+}
+/* #endregion */
+
+/* #region FOOTER */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 20px;
+  font-size: 1.5rem;
+  cursor: default;
+  gap: 10px;
+}
+.github-logo-link {
+  width: 40px;
+  fill: var(--primary-color);
+}
+.github-logo-link:hover {
+  fill: var(--primary-accent);
+}
+/* #endregion */
+
+/* #region DIALOG FORM */
+dialog {
+  padding: 0;
+  border: 4px solid var(--secondary-accent);
+  border-radius: 10px;
+}
+dialog#add-book-dialog[open] form,
+dialog#edit-book-dialog[open] form{
+  height: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.dialog-header {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+#add-book-form > p,
+#edit-book-form > p {
+text-align: center;
+font-size: 2rem;
+font-weight: bold;
+}
+#close-button {
+  width: 25px;
+  height: 25px;
+  justify-self: end;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-accent);
+  font-size: 1rem;
+  grid-column: 2;
+  cursor: pointer;
+}
+#close-button:hover {
+  background-color: var(--secondary-accent);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+form > label input[type='text'],
+form > label input[type='number'] {
+  font-size: 1.2rem;
+  height: 35px;
+  width: 250px;
+  border: 2px solid var(--primary-accent);
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+.form-submit-button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  width: 250px;
+  height: 50px;
+  border: 3px solid var(--secondary-accent);
+  border-radius: 10px;
+}
+.form-submit-button:hover {
+  background-color: var(--secondary-accent);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.read-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: auto auto;
+  gap: 10px
+}
+.read-container > p{
+  font-size: 1.2rem;
+  grid-column: 1;
+}
+#read {
+  appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-accent);
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+#read:hover {
+  background-color: lightgray;
+}
+#read:checked {
+  background-color: var(--secondary-accent);
+}
+#read::before {
+  content: "✔";
+  position: absolute;
+  left: 2.5px;
+  visibility: hidden;
+}
+#read:checked::before {
+  visibility: visible;
+}
+input[for='book-read']:checked {
+  background-color: #1e1b4b;
+}
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);;
+}
+/* #endregion Dialog Form */
+
+
+
