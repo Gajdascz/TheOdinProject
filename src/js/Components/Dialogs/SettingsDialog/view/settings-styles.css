@@ -1,0 +1,89 @@
+@import url('../../common/dialog-styles.css');
+
+.settings-dialog-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+.settings-instructions-button {
+  flex: 0.75;
+  height: 100%;
+}
+
+.board-settings-title,
+.player-one-settings-title,
+.player-two-settings-title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--text-white);
+  margin-bottom: 0.5rem;
+}
+.player-information-input-container {
+  display: flex;
+  gap: 0.5em;
+}
+.player-information-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+.player-information-container > input,
+.player-information-container > select {
+  width: 100%;
+  height: 100%;
+  padding: 0.25em;
+  font-weight: bold;
+}
+.attack-delay-input-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.attack-delay-input-wrapper > input {
+  text-align: center;
+  max-width: 150px;
+}
+.attack-delay-input-wrapper > .attack-delay-label {
+  font-weight: bold;
+}
+.board-settings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.board-settings-inputs-container {
+  display: flex;
+  gap: 0.25em;
+  justify-content: center;
+}
+.rows-input-wrapper,
+.cols-input-wrapper,
+.letter-axis-input-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  font-weight: bold;
+}
+.rows-input-wrapper > input,
+.cols-input-wrapper > input {
+  min-width: 55px;
+}
+.letter-axis-input-wrapper > select {
+  min-width: 125px;
+  height: 100%;
+  text-align: center;
+}
+
+.dialog-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.settings-submit-disclaimer {
+  font-weight: bold;
+  font-size: 1.15rem;
+  font-style: italic;
+}

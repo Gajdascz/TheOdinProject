@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'bebas-neue';
+  src: url('../assets/fonts/bebasneue-regular-webfont.woff2') format('woff2'),
+    url('../assets/fonts/bebasneue-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --ocean-blue: #0077be;
+  --battleship-gray: #607d8b;
+  --radar-green: #4caf50;
+  --text-white: #ffffff;
+  --navy-background: #001f3f;
+  --miss: #d3d3d3;
+  --hit: #ff3333;
+  --own-ship-hit: #b32400;
+  --unplaced-ship: #daa520;
+
+  --color-yellow-orange: #daa520;
+  --color-vibrant-green: #4caf50;
+  --color-deep-navy-blue: #001f3f;
+  --color-bright-red: #ff3333;
+  --color-deep-orange-red: #b32400;
+  --color-vibrant-blue: #0077be;
+  --color-steel-blue: #607d8b;
+  --color-light-gray: #d3d3d3;
+
+  --grid-cell-width: 2.5em;
+  --grid-cell-height: 2.5em;
+
+  --color-text-primary: white;
+  --color-text-secondary: black;
+
+  --color-border-primary: white;
+  --color-border-secondary: black;
+  --font-size-xxl: 3rem;
+  --font-size-xl: 2rem;
+  --font-size-l: 1.5rem;
+  --font-size-m: 1.25rem;
+  --font-weight-bold: 700;
+  --border-standard: 2px solid;
+  --border-radius-standard: 10px;
+
+  --gap-small: 0.25em;
+  --gap-standard: 0.5em;
+  --gap-large: 1em;
+
+  --border-white: 3px solid white;
+  --border-navy: 3px solid var(--color-deep-navy-blue);
+  --border-green: 3px solid var(--color-vibrant-green);
+
+  --font-header: 'bebas-neue';
+}
+input[type='text'] {
+  cursor: text;
+}
+
+.color-white {
+  color: var(--text-white);
+}
+.color-navy {
+  color: var(--navy-background);
+}
+
+.hide {
+  display: none;
+}
+.ship {
+  color: var(--battleship-gray);
+}
+
+.medium {
+  background-color: var(--unplaced-ship);
+  color: black;
+}
+.hard {
+  background-color: var(--hit);
+  color: black;
+}
+.easy {
+  background-color: var(--radar-green);
+  color: black;
+}
+
+.base-header {
+  font-family: 'bebas-neue';
+  font-weight: 700;
+  font-size: 2rem;
+}
+.base-button {
+  height: 2.25em;
+  border: var(--border-white);
+  background-color: var(--color-vibrant-blue);
+  color: var(--color-text-primary);
+  font-weight: bold;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+.base-button.active,
+.base-button:hover {
+  border-color: black;
+  background-color: var(--radar-green);
+  color: var(--color-deep-navy-blue);
+}
+
+.ai-display-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.ai-display-header > p {
+  color: #ff3333;
+  font-size: 1.15rem;
+}

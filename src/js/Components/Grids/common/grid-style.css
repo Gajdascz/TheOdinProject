@@ -1,0 +1,30 @@
+@import url('../../../../styles/style.css');
+
+.grid-wrapper {
+  display: flex;
+  height: fit-content;
+  gap: 1em;
+}
+.grid-header {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.5em;
+}
+
+.grid-header > p {
+  font-weight: bold;
+  font-size: 1.25rem;
+  border-bottom: var(--border-white);
+}
+.grid-cell {
+  width: var(--grid-cell-height);
+  height: var(--grid-cell-width);
+  background-color: var(--color-vibrant-blue);
+  border: 1px solid var(--text-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1em;
+  font-weight: bolder;
+}
