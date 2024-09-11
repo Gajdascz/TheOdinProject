@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/normalize.css">
+    <link rel="stylesheet" href="./Styles/base.css">
+    <script src="index.js" type="module"></script>
+    <title>Homepage</title>
+  </head>
+
+  <body>
+
+    <section class="about-me">
+      <div class="switch theme-selector-switch">
+        <input type="checkbox" class="theme-selector" name="theme-selector" id="theme-selector">
+        <label class="switch-label" for="theme-selector">
+          <span class="accessability-text">Toggle Dark or Light Theme</span>
+          <div class="switch-slider">
+            <div class="switch-options">
+              <svg class="theme-color-icon dark-theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>Dark Theme</title>
+                <path d="M12 2A9.91 9.91 0 0 0 9 2.46A10 10 0 0 1 9 21.54A10 10 0 1 0 12 2Z" />
+              </svg>
+              <svg class="theme-color-icon light-theme-icon active" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24">
+                <title>Light Theme</title>
+                <path
+                  d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13" />
+              </svg>
+            </div>
+          </div>
+        </label>
+      </div>
+      <div class="about-me-info-container">
+        <div class="headshot-image-container">
+          <img class="headshot-image" src="Assets/Images/headshot.png" alt="Headshot">
+          <div class="headshot-image-overlay">
+            <p>Nolan Gajdascz</p>
+          </div>
+        </div>
+        <div class="about-me-info-card-container">
+          <div class="about-me-text-container">
+            <h1>About Me</h1>
+            <p>
+              Hello! I'm Nolan Gajdascz, an aspiring web developer holding a Bachelor's degree in Information Technology
+              with a
+              Mathematics and Engineering focus from the University of Massachusetts Lowell. My academic journey has
+              fostered a strong
+              self-driven attitude and a deep passion for programming and tackling complex problems. Post-graduation,
+              I've
+              dedicated myself to continuing to always give my best effort and taking pride in my work.
+            </p>
+            <br>
+            <p>
+              Currently, I'm enhancing my technical skillset through The Odin Project's curriculum, focused on mastering
+              the essentials
+              for a successful career in web development. Naturally I'm more inclined towards logical problem-solving
+              over design, but I am looking forward to diving into the React framework. With a commitment to
+              lifelong
+              learning, I am excited to continue developing my skills, well beyond the commencement of my professional
+              journey.
+            </p>
+          </div>
+          <div class="about-me-icon-container"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="my-work">
+      <div class="my-work-section-header">
+        <h1>My Work</h1>
+      </div>
+      <div class="project-card-container"></div>
+    </section>
+
+
+    <footer>
+      <div class="contact-container">
+        <h1 class="contact-header">Contact Me</h1>
+        <p class="contact-message">Let's Connect! I welcome work opportunities, advice, or any questions you might have.
+          My inbox is always open.</p>
+        <a class="contact-email" , href="mailto:gajdasczdev@gmail.com">
+          <svg class="small-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>Email</title>
+            <path
+              d="M13 19C13 15.69 15.69 13 19 13C20.1 13 21.12 13.3 22 13.81V6C22 4.89 21.1 4 20 4H4C2.89 4 2 4.89 2 6V18C2 19.11 2.9 20 4 20H13.09C13.04 19.67 13 19.34 13 19M4 8V6L12 11L20 6V8L12 13L4 8M20 22V20H16V18H20V16L23 19L20 22Z" />
+          </svg>
+          <p>gajdasczdev@gmail.com</p>
+        </a>
+        <div class="footer-icon-container"></div>
+      </div>
+      <div class="footer-image-container">
+        <img src="Assets/Images/quote.png" alt="">
+      </div>
+    </footer>
+
+  </body>
+
+</html>
