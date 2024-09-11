@@ -8,4 +8,7 @@ A collection of all of my projects created while working through
 I just recently transitioned all of the individual projects into this repository and I will create a
 unified page for the highlighted static projects and further documentation.
 
+## License
+
+All work contained in this repository is licensed under the [GNU GENERAL PUBLIC LICENSE](./LICENSE)
 &copy; 2024 Nolan Gajdascz [Github](https://www.github.com/gajdascz)
