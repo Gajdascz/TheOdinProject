@@ -1,0 +1,61 @@
+@import url('../../../styles/index.css');
+
+.field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+}
+.field-wrapper > * {
+  height: 100%;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.field-input-container > textarea {
+  resize: none;
+  width: 100%;
+  min-height: 75px;
+  resize: vertical;
+}
+
+.field-input-container {
+  display: flex;
+  border: 3px solid var(--color-primary-accent);
+  border-radius: var(--border-radius);
+  min-height: 40px;
+}
+.field-input-container > * {
+  border-radius: 0;
+  padding: var(--space-small);
+}
+
+.field-input[type='date'] {
+  cursor: text;
+}
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+.field-input-container > button.field-wrapper-delete-button {
+  display: flex;
+  max-width: 10%;
+  align-self: stretch;
+  border-bottom: 3px solid var(--color-primary-accent);
+  font-weight: bolder;
+  background-color: var(--color-primary-accent);
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.field-input-container > button.field-wrapper-delete-button:hover {
+  background-color: var(--color-primary-accent-secondary);
+  border-left: 3px solid var(--color-primary-accent);
+  color: var(--color-primary-accent);
+}
+.field-input-container > input {
+  width: 100%;
+}

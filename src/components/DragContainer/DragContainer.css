@@ -1,0 +1,174 @@
+.drag-container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-medium) 0;
+  width: 100%;
+}
+div.draggable-item,
+div.draggable-field-container {
+  display: flex;
+  align-items: center;
+  border: 0.5em solid transparent;
+  position: relative;
+}
+div.draggable-field-container > * {
+  border-radius: 0;
+  max-width: 100%;
+}
+
+div.draggable-item
+  > .render-item-wrapper
+  > .render-item
+  > .draggable-field:hover {
+  color: var(--color-primary-accent);
+  background-color: var(--color-primary-accent-secondary);
+}
+
+.render-item-wrapper {
+  flex: 1;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.render-item-wrapper > * {
+  width: 100%;
+  min-width: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.render-item
+  > .drop-down-container
+  > .drop-down-interactive-header
+  > .toggle-drop-down-button {
+  border-radius: 0;
+}
+
+.render-item > .draggable-field {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+.render-item-wrapper > .render-item > .field-wrapper > .field-input-container {
+  border-radius: 0;
+}
+
+.render-item-wrapper > .drop-down-container > .drop-down-container-content {
+  border-top: 0;
+}
+
+.draggable-field {
+  flex: 1;
+  font-size: 1rem;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  word-break: break-all;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: var(--space-small);
+  border-top: 3px solid var(--color-primary-accent);
+  border-bottom: 3px solid var(--color-primary-accent);
+  cursor: pointer;
+}
+
+.drag-handle,
+.draggable-item-delete-button {
+  border: 3px solid var(--color-primary-accent);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 1.1rem;
+  background-color: var(--color-primary-accent);
+  color: var(--color-primary-accent-secondary);
+  padding: var(--space-small);
+}
+.drag-handle {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  width: 40px;
+  height: 40px;
+  cursor: grab;
+}
+.draggable-item-delete-button {
+  width: 40px;
+  height: 40px;
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.drag-handle:hover,
+.draggable-item-delete-button:hover {
+  background-color: var(--color-primary-accent-secondary);
+  color: var(--color-primary-accent);
+}
+
+.draggable-item.drag-over,
+.draggable-field-container.drag-over {
+  border: 0.5em dashed var(--drag-highlight);
+}
+
+/*#region Drop down container re-structure to fix view when draggable.*/
+div[data-container-context='sections-container'] {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  grid-template-rows: min-content 1fr;
+}
+div[data-container-context='sections-container'] > * {
+  display: inherit;
+}
+div[data-container-context='sections-container']
+  > .render-item-wrapper
+  > .drag-handle {
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: var(--border-radius) 0 0 0;
+}
+div[data-container-context='sections-container']
+  > .render-item-wrapper
+  > .render-item {
+  display: contents;
+}
+
+div[data-container-context='sections-container'] > .render-item-wrapper,
+div[data-container-context='sections-container']
+  > .render-item-wrapper
+  > .render-item
+  > .drop-down-container {
+  display: contents;
+}
+div[data-container-context='sections-container']
+  > .render-item-wrapper
+  > .render-item
+  > .drop-down-container
+  > .drop-down-container-header {
+  grid-column: 2;
+  grid-row: 1;
+  border-radius: 0;
+}
+div[data-container-context='sections-container']
+  > .render-item-wrapper
+  > .draggable-item-delete-button {
+  grid-column: 3;
+  grid-row: 1;
+  border-radius: 0 var(--border-radius) 0 0;
+}
+div[data-container-context='sections-container']
+  > .render-item-wrapper
+  > .render-item
+  > .drop-down-container
+  > .drop-down-container-content {
+  grid-column: 1/-1;
+  grid-row: 2;
+  border-top: 3px solid var(--color-primary-accent);
+}
+/*#endregion*/

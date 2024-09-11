@@ -1,0 +1,11 @@
+@import url('./index.css');
+
+.cv-app-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100vw;
+  max-width: 100%;
+  align-content: start;
+  padding: var(--space-large);
+  gap: var(--space-large);
+}

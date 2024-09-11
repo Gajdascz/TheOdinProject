@@ -1,0 +1,45 @@
+@import url('../../../styles/index.css');
+
+.index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary-accent);
+  color: var(--color-primary-accent-secondary);
+  padding: var(--space-medium) var(--space-large);
+}
+
+h1.app-name {
+  font-size: 2rem;
+}
+
+svg.header-icon {
+  height: 48px;
+  width: 48px;
+  fill: var(--color-primary-accent);
+  transform: none;
+  transition: none;
+  stroke-width: 1.5px;
+}
+
+.header-buttons-container {
+  display: flex;
+  gap: var(--space-large);
+}
+.header-icon-button {
+  width: 36px;
+  height: 36px;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: var(--color-primary-accent-secondary);
+}
+.header-icon-button:hover > svg {
+  fill: var(--color-primary-accent-secondary);
+}
+.header-icon-button:hover {
+  background-color: var(--color-primary-accent);
+  border: 3px solid var(--color-primary-accent-secondary);
+}
