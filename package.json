@@ -1,0 +1,13 @@
+{
+  "name": "basic-info-site",
+  "version": "1.0.0",
+  "description": "Developed as part of [The Odin Project curriculum](https://www.theodinproject.com/lessons/nodejs-basic-informational-site), this project provided me with introductory knowledge of getting started with a Node.js project.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
