@@ -1,0 +1,38 @@
+extends layout 
+
+block scripts 
+  script(type="module", src="/scripts/updateFormValidation.js") 
+
+block content
+  include mixins/inputField
+  include mixins/adminForm
+  include mixins/hiddenField
+  include mixins/manufacturerApplication
+  -
+    const params = {
+      errors, success,
+      title, entityType, dataKey, entityId, errorMsgs,
+      repFirstName, repLastName, repRole,
+      companyName, companyRef, companyStructure, yearFounded, ein, companyDescription,
+      countryCode, state, postalCode, city, street, extension,
+      email, phone, website,
+      note
+    }
+    console.log(errors)
+  if errors || success
+    span(style='display:none;',data-run-validate='true' data-errors=errors ? errors : 'false')
+  if isUpdate
+    +adminForm('applicationForm', 'updateEntity')
+      case dataKey
+        when 'manufacturer'
+          +manufacturerApplication(params)
+        default
+          p No application of type #{dataKey} found. 
+  else 
+    form(method='POST' id='applicationForm' action=`/application/create/${dataKey}`).apply-form
+      case dataKey
+        when 'manufacturer'
+          +manufacturerApplication(params)
+          button(type='submit').form-submit-button Submit
+        default
+          p No application of type #{dataKey} found.

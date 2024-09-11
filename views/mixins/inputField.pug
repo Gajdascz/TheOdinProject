@@ -1,0 +1,33 @@
+mixin inputField(id, label, placeholder='', value='', required=false, type='text', options = [])
+  div.input-field-wrapper
+    label(for=id).input-field-wrapper-label= label
+      if required
+        span().required-marker *
+    case type
+      when 'select'
+        select.input-field-wrapper-field(
+          id=id
+          name=id
+          required=required,
+          placeholder=placeholder
+        )
+          option(value='' disabled selected=(value==='' ? 'selected' : false)) -- #{placeholder} --
+          each option in options
+            option(value=option selected=(value===option ? 'selected' : false))= option
+      when 'textarea'
+        textarea.input-field-wrapper-field(
+          id=id
+          name=id 
+          placeholder=placeholder 
+        )=value
+      default 
+        input.input-field-wrapper-field(
+          id=id
+          type=type
+          placeholder=placeholder 
+          name=id 
+          value=value
+          required=required
+        )
+    div.input-field-wrapper-errors-container
+      block

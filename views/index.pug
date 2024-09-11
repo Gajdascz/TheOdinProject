@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  div.index-container 
+    section.index-intro 
+      h1= title
+      p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, quasi! Fugiat repellat debitis autem vitae, numquam laborum odit corporis repellendus deleniti ipsum minima cum perferendis nam sed qui vero alias nobis reiciendis excepturi ullam quis enim cumque. Omnis quod magni facere suscipit vitae, accusantium rerum reiciendis libero quisquam sequi at dolor odit molestias similique rem neque laborum distinctio. 
+      p Aliquam eius ducimus eos, excepturi expedita magni quaerat officia tenetur rerum odio architecto fuga sit soluta doloribus perspiciatis voluptates mollitia aut consequuntur repellat molestias. Beatae, iure voluptate ut repudiandae odit obcaecati temporibus fuga eveniet sed distinctio quod aut perspiciatis accusantium dolorum id.
+    section.index-overview
+      h1 Current Inventory Overview
+      ul.index-overview-list
+        li
+          span.span-label Manufacturers: 
+          | !{totalManufacturers}
+        li 
+          span.span-label Items
+          ul.nested-list 
+            li
+              span.span-label &bull; All:
+              |   !{totalItems}
+            li 
+              span.span-label &bull; Categories:
+              |   !{totalCategories}
+            li 
+              span.span-label &bull; Types:
+              |   !{totalTypes}
+            li
+              span.span-label &bull; Stock:
+              |   !{totalStock}
+        li 
+          span.span-label Applications
+          ul.nested-list
+            li
+              span.span-label Pending
+              ul.nested-list
+                li
+                  span.span-label &bull; Manufacturers:
+                  |   !{totalPendingManufacturers}
+                li(style='text-decoration: line-through;')
+                  span.span-label &bull; Items:
+                  |   !{totalPendingItems}
+                  ul.nested-list
+            li
+              span.span-label Reviewed
+              ul.nested-list
+                li
+                  span.span-label &bull; Accepted:
+                  |   !{totalAcceptedApplications}
+                li
+                  span.span-label &bull; Rejected:
+                  |   !{totalRejectedApplications}
+

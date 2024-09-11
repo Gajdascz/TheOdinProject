@@ -1,0 +1,40 @@
+include mixins/inputWithButton
+
+nav.primary-nav
+  button(type='button' id='primaryNavHamburgerToggle' aria-expanded='false') ☰
+  div.primary-nav-content-container 
+    section.primary-nav-logo-section
+      h1.primary-nav-logo-link-header
+        a(href="/").primary-nav-logo-link Pencilooza
+    section.primary-nav-link-section
+      h3.primary-nav-link-section-header Browse
+      ul.primary-nav-link-section-ul
+        li
+          a(href="/manufacturer") Manufacturers 
+        li
+          a(href="/item") Items
+        li
+          a(href="/application") Applications 
+    section.primary-nav-link-section
+      h3.primary-nav-link-section-header Applications
+      ul.primary-nav-link-section-ul
+        li
+          a(href="/application/create/manufacturer") Manufacturer  
+
+    form(method='POST' action='/application' id='search-application-form').primary-nav-search-application
+      +inputWithButton('application-search-query','applicationSearchQuery',
+        { 
+          labelIsHidden:false, 
+          labelText:'Find Application',
+          labelClass:'primary-nav-link-section-header',
+          inputPlaceholder: 'Application id',
+          buttonClass:'application-query-button',
+          buttonText:'›',
+          buttonType:'submit'
+        }
+      )
+      p.search-error-message.error-message(style='display:none;')
+    section.primary-nav-footer-section
+      p &copy; 2024 Nolan Gajdascz
+      a(href="https://github.com/Gajdascz" rel='noopener noreferrer' target='_blank') GitHub
+  script(type="module", src="/scripts/primaryNav.js") 
