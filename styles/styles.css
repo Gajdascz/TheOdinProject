@@ -1,0 +1,156 @@
+body {
+  background-color: #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+.title-container > h3 {
+  margin-top: 15px;
+  margin-bottom: -15px;
+}
+
+.choice-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.player-text-container, .computer-text-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.player-score-container, .computer-score-container {
+  align-items: center;
+  display: flex;
+}
+.player-score, .computer-score {
+  margin-left: 10px;
+}
+
+.player-choice-container, .computer-choice-container {
+  background-color: lightblue;
+  padding: 25px;
+}
+
+.player-button-container, .computer-button-container {
+  display: flex;
+  margin-top: 15px;
+  gap: 5px;
+}
+
+.player-button-container > button {
+  padding: 10px;
+  font-weight: bolder;
+  cursor: pointer;
+  width: 100px;
+  border-color: aqua;
+  border-radius: 10px;
+}
+.player-button-container > button:hover {
+  background-color: aqua;
+  border-color: black;
+}
+
+.computer-button-container > button  {
+  padding: 10px;
+  font-weight: bolder;
+  width: 100px;
+  border-color: red;
+  border-radius: 10px;
+  cursor: not-allowed;
+}
+
+.round-results-header {
+  text-align: center;
+}
+.round-results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  min-height: 10vh;
+}
+
+
+
+.game-score-footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.game-score-container {
+ display: flex;
+ justify-content: space-between;
+}
+.player-game-score-container, .computer-game-score-container {
+  display: flex;
+  gap: 5px;
+}
+.player-game-score-container {
+  border: 2px solid aqua;
+  padding: 5px;
+  border-radius: 10px;
+  min-width: 120px;
+  max-width: fit-content;
+}
+.computer-game-score-container {
+  border: 2px solid red;
+  padding: 5px;
+  border-radius: 10px;
+  min-width: 120px;
+  max-width: fit-content;
+}
+
+
+.player-wins-game-result {
+  text-align: center;
+  margin: 10px;
+  font-weight: bolder;
+  border: 5px solid aqua;
+  padding: 10px;
+  max-width: fit-content;
+  white-space: pre-line;
+}
+
+.computer-wins-game-result {
+  text-align: center;
+  margin: 10px;
+  font-weight: bolder;
+  border: 5px solid red;
+  padding: 10px;
+  white-space: pre-line;
+}
+
+.new-game-button {
+  padding: 10px;
+  font-weight: bolder;
+  width: 200px;
+  border-color: purple;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.new-game-button:hover {
+  background-color: purple;
+  border-color: black;
+}
