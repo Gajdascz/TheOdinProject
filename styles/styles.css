@@ -1,0 +1,319 @@
+:root {
+  --primary-color: #fef2f2;
+  --primary-accent: #f87171;
+  --primary-accent-2: #cec7c7;
+  --secondary-color: #b91c1c;
+  --secondary-accent: black;
+  
+  background-color: var(--primary-color);
+  cursor: default;
+}
+
+.layout-container { 
+  display: grid;
+  grid-template-rows: auto 1fr auto ;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer"
+  "filler"
+  ;
+}
+button {
+  border: none;
+  cursor: pointer;  
+}
+.filler {
+  grid-column: 1 / -1;
+  grid-area: filler;
+  background-color: var(--secondary-color);
+  height: 100vh;
+  width: 100%;
+
+}
+
+
+
+.header-container {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 1.5rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 15px 3px var(--secondary-accent);
+}
+.player-options-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: bolder;
+  border: 5px solid var(--secondary-accent);
+  border-radius: 10px;
+}
+.player-options-button:hover,
+.player-options-button:hover svg{
+  background-color: var(--primary-accent);
+  color: var(--secondary-accent);
+  color: var(--secondary-accent);
+  border-color: var(--primary-color);
+  fill: var(--secondary-accent);
+}
+.player-options-icon {
+  width: 50px;
+  fill: var(--secondary-color);
+}
+
+
+.main-container {
+  grid-area: main;
+  min-height: 60vh;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  place-items: center;
+  grid-template-areas: 
+  "game-board-container  information-side-bar"
+  ;
+}
+
+aside.session-information-container {
+  height: 100%;
+  width: 100%;
+  color: var(--primary-color);
+  background-color: var(--secondary-accent);
+  box-shadow: 0 0 10px 3px var(--secondary-accent);
+  font-size: 1.2rem;
+}
+aside.session-information-container > h3 {
+  text-align: center;
+  padding: 15px;
+  font-size: 1.75rem;
+  font-weight: bolder;
+}
+.session-totals > h4 {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  padding-bottom: 5px;
+}
+aside.session-information-container .player-one-session,
+aside.session-information-container .player-two-session,
+aside.session-information-container .session-totals {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Game Board Container */
+/* #region */
+.game-board-container {
+  grid-area: game-board-container;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  place-content: center;
+  justify-content: center;
+}
+.turn-display {
+  grid-area: turn-display;
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  font-size: 1.75rem;
+  font-weight: bolder;
+  padding-bottom: 5px;
+}
+.game-board-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 125px;
+  padding: 5px;
+  background-color: var(--primary-accent-2);
+  font-size: 6rem;
+}
+.game-board-cell:hover {
+  background-color: var(--primary-accent);
+}
+.game-board-row-1{
+  grid-row: 2;
+  border-bottom: 5px solid var(--secondary-color);
+  display: flex;
+}
+.game-board-row-2 {
+  grid-row: 3;
+  border-bottom: 5px solid var(--secondary-color);
+  display: flex;
+}
+.game-board-row-3 {
+  grid-row: 4;
+  display: flex;
+}
+.game-board-column-2 {
+  border-right: 5px solid var(--secondary-color);
+  border-left: 5px solid var(--secondary-color);
+  width: 135px;
+}
+/* #endregion */
+
+/* Footer Container */
+/* #region */
+.footer-container {
+  grid-area: footer;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.8em;
+}
+.github-logo-link {
+  width: 60px;
+  fill: var(--primary-color);
+}
+.github-logo-link:hover {
+  fill: var(--secondary-accent);
+}
+/* #endregion */
+
+/* Player Information Dialog Form*/
+/* #region */
+#information-options-dialog {
+  width: 75%;
+  border: 10px solid var(--secondary-accent);
+  border-radius: 10px;
+}
+
+
+form#information-options-form {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 15px;
+}
+#information-options-form h1 {
+  grid-column: 1 / -1;
+  justify-self: center;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.dialog-select {
+  width: 100%;
+}
+.type-difficulty-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.dialog-text-input:focus,
+.dialog-select:focus {
+  outline: 2px solid var(--secondary-accent);
+  background-color: var(--primary-color);
+}
+
+.dialog-text-input,
+.dialog-select {
+  border-radius: 5px;
+  border: 1px solid var(--secondary-accent);
+  font-size: 1.25rem;
+  padding: 5px;
+}
+.player-one-information-container,
+.player-two-information-container {
+  text-align: center;
+  gap: 8px;
+}
+.player-one-information-container h2,
+.player-two-information-container h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+.player-one-information-container {
+  grid-column: 1;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+}
+.player-two-information-container {
+  grid-column: 2;
+  justify-self: baseline;
+  display: flex;
+  flex-direction: column;
+}
+
+.information-submit-button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 60%;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 5px solid var(--secondary-accent);
+}
+
+.information-submit-button:hover {
+  background-color: var(--secondary-accent);
+  color: var(--primary-color);
+  border-color: var(--secondary-color)
+}
+/* #endregion */
+
+/* End Round Dialog */
+/* #region */
+dialog#end-round-dialog {
+  position: fixed;
+  top:  10px;
+  bottom: auto;
+} 
+::backdrop {
+  background: rgba(0, 0, 0, 0);
+ }
+#end-round-dialog[open] {
+  width: 100%;
+  border: 10px solid var(--secondary-accent);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  gap: 25px
+}
+#end-round-dialog > h1 {
+  min-width: fit-content;
+}
+#end-round-dialog .end-round-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+#end-round-dialog .end-round-buttons-container > button {
+  width: 210px;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 5px solid var(--secondary-accent);
+}
+
+#end-round-dialog .end-round-buttons-container > button:hover{
+  background-color: var(--secondary-accent);
+  color: var(--secondary-color);
+  border-color: var(--secondary-color)
+}
+/* #endregion */
