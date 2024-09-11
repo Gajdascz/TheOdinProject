@@ -1,0 +1,103 @@
+extends layout
+
+block scripts
+  script(type="module", src="/scripts/itemDetail/index.js") 
+
+block content
+  include mixins/hiddenField
+  div.item-detail-container 
+    header.item-detail-header
+      h1 #{name}
+      p= description
+    section.item-detail-basic-info
+      ul.item-detail-basic-info-list 
+        li.item-detail-category 
+          span.span-label Category:
+          |   #{category}
+        li.item-detail-type
+          span.span-label Type:
+          |   #{type}
+        li.item-detail-stock
+          span.span-label Stock:
+          |   #{stock}
+        li.item-detail-made-in
+          span.span-label Made In:
+          |   #{madeIn}
+        li.item-detail-sku
+          span.span-label SKU:
+          |   #{sku}
+        li.item-detail-manufacturer
+          span.span-label Manufacturer:
+          a(href=manufacturer.url)  #{manufacturer.company.name}
+        li.item-detail-base-ppu 
+          span(data-base-ppu=`${basePpu}`).span-label BasePPU: 
+          |   $#{basePpu}
+    section.item-detail-options
+      form(id='itemDetailOptionsForm', method='POST')
+        h2.item-detail-options-form-header Options
+        div.item-detail-options-inputs-container
+          div(role='combobox' aria-expanded=false aria-owns='dropdown-list' aria-haspopup='listbox' data-for-menu-id='quantitySelectToggle').dropdown-container
+            +hiddenField('quantitySelectedOption')
+            +hiddenField('quantitySelectedOptionPpuDiff')
+            div.dropdown-container-label-toggle-wrapper 
+              h3.dropdown-container-label Quantity
+              button(
+                aria-controls='dropdown-list'
+                id='quantitySelectToggle'
+                aria-haspopup=true
+                aria-expanded=false
+              ).dropdown-toggle= defaultSelected.quantityPricing.quantity
+              ul(rule='listbox' id='dropdown-list' tabindex='-1' style='display:none;').dropdown-menu-option-list
+                for price in quantityPricing
+                  li(
+                    role='option'
+                    class=defaultSelected.quantityPricing.quantity === price.quantity ? 'selected-option' : ''
+                    tabindex='0' 
+                    data-group-name='quantity'
+                    data-option-name=`${price.quantity}`
+                    data-ppu-diff=`${price.ppuDiff}`
+                  ).dropdown-menu-option= price.quantity
+          if optionGroups.length
+            each optionGroup in optionGroups
+              div(role='combobox' aria-expanded=false aria-owns='dropdown-list' aria-haspopup='listbox' data-for-menu-id=`${optionGroup.groupName+'SelectToggle'}`).dropdown-container
+                +hiddenField(`${optionGroup.groupName}SelectedOption`)
+                +hiddenField(`${optionGroup.groupName}SelectedOptionPpuDiff`)
+                div.dropdown-container-label-toggle-wrapper
+                  h3.dropdown-container-label #{optionGroup.groupName.charAt(0).toUpperCase() + optionGroup.groupName.slice(1)}
+                  button(
+                    aria-controls='dropdown-list'
+                    id=optionGroup.groupName+'SelectToggle'
+                    aria-haspopup=true
+                    aria-expanded=false
+                  ).dropdown-toggle= defaultSelected.options.find((selected) => selected.groupName === optionGroup.groupName).option.optionName
+                  ul(rule='listbox' id='dropdown-list' tabindex='-1' style='display: none;').dropdown-menu-option-list
+                    for option in optionGroup.options
+                      li(
+                        role='option' 
+                        class=defaultSelected.options.some(selected => selected.option.optionName === option.optionName) ? 'selected-option' : '' 
+                        tabindex='0'
+                        data-group-name=`${optionGroup.groupName}`
+                        data-option-name=`${option.optionName}` 
+                        data-ppu-diff=`${option.ppuDiff}`
+                        data-link= `${option.link ? option.link : ''}`
+                      ).dropdown-menu-option= option.optionName
+      aside.selected-options-overview
+        div.selected-options-costs
+          h3.selected-options-header Selected
+          ul.selected-options-list
+          div.label-value-wrapper
+            span.span-label Total:
+            span.total-options-modifier
+        div.selected-options-references
+          ul.selected-options-references-list
+    section.item-detail-totals
+      h3 Totals
+      div.label-value-wrapper 
+        span.span-label Quantity: 
+        span.total-quantity
+      div.label-value-wrapper 
+        span.span-label PPU:
+        span.total-ppu
+      div.label-value-wrapper 
+        span.span-label Order: 
+        span.total-order

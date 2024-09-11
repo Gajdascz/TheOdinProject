@@ -1,0 +1,7 @@
+mixin labelValue(label,value)
+  p.label-value-wrapper
+    span.span-label= label
+    if value
+      span.span-value= value
+    else
+      block

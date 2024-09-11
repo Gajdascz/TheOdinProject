@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= 'Hmmm.... something isn\'t quite right'
+  if error && error.status && error.status === 404
+    h2= `${message} (${error.status})`
+  else
+    details.error-details
+      summary Error Details 
+      h2= message
+      if error.status
+        h2 Status: #{error.status}
+      if error.stack
+        di.error-details
+      pre= error.stack
+  h2 Let's get back on track!
+  div.button-group
+    a(href='/').link-button Home
+    button(type='button' onClick='history.back()').link-button Back
