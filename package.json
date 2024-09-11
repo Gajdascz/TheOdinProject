@@ -1,0 +1,38 @@
+{
+  "name": "mini-message-board",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "DEBUG_COLORS=1 node dist/app.js",
+    "start:w": "node --watch dist/app.js",
+    "build": "tsc",
+    "build:w": "tsc -w --preserveWatchOutput true",
+    "rm:dist": "rm -rf dist/",
+    "start:dev": "DEBUG_COLORS=1 concurrently --prefix \"none\" \"npm run build:w\" \"wait-on -d 2000 dist/app.js && npm run start:w\""
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "debug": "^4.3.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "express-rate-limit": "^7.4.0",
+    "obscenity": "^0.4.0",
+    "pg": "^8.12.0",
+    "pg-format": "^1.0.4",
+    "supports-color": "^9.4.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.1.0",
+    "@types/pg": "^8.11.6",
+    "@types/pg-format": "^1.0.5",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.5.4",
+    "wait-on": "^7.2.0"
+  }
+}

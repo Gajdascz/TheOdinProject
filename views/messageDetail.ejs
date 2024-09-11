@@ -1,0 +1,11 @@
+<!--prettier-ignore-->
+<section>
+  <a href="/">Home</a>
+  <div class="message-detail-message-container">
+    <% message.forEach(msg => { %>
+      <strong>Date:</strong> <%= msg.sent %> <br />
+      <strong>From:</strong> <%= msg.username %> <br />
+      <strong>message:</strong> <%= msg.body %> <br />     
+    <% }) %>
+  </div>
+</section>
