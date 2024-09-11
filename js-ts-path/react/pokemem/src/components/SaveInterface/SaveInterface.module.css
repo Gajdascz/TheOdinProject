@@ -1,0 +1,40 @@
+.container > a {
+  text-decoration: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5em;
+  color: var(--color-pokemon-yellow);
+  background-color: var(--color-pokemon-blue);
+  border: 3px solid var(--color-pokemon-yellow);
+  border-radius: 10px;
+  font-weight: bold;
+  height: fit-content;
+}
+.button:hover {
+  background-color: var(--color-pokemon-yellow);
+  color: var(--color-pokemon-blue);
+  border-color: var(--color-pokemon-blue);
+  box-shadow: 0 0 3px 3px var(--color-pokemon-yellow);
+}
+
+.button.resetButton {
+  background-color: #ff6868;
+  color: black;
+  border-color: black;
+}
+
+.button.resetButton:hover {
+  background-color: black;
+  color: #ff6868;
+  border-color: black;
+  box-shadow: 0 0 3px 3px #ff6868;
+}

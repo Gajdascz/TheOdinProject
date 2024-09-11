@@ -1,0 +1,158 @@
+.monitor {
+  width: 100%;
+  height: 100%;
+  background-color: silver;
+  border-radius: 8px;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+
+.monitorScreen {
+  background-color: #f2f2f2;
+  width: 80%;
+  height: 100%;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.monitorTop,
+.monitorBottom {
+  display: flex;
+  width: 100%;
+}
+
+.monitorTop {
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  height: fit-content;
+  padding: 0.25em;
+}
+.monitorBottom {
+  padding: 0.25em;
+  height: fit-content;
+  justify-content: space-between;
+}
+
+.monitorBrightness {
+  width: 5px;
+  height: 5px;
+  background-color: #ff0000;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+
+.monitorIndicator {
+  width: 11px;
+  height: 11px;
+  background-color: #ff0000;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+.monitorSpeaker {
+  height: 100%;
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+}
+.monitorSpeaker > span {
+  height: 2px;
+  background-color: black;
+}
+.viewingContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000cc;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.viewingBackground {
+  background-color: red;
+  padding: 1em;
+  border-radius: 10px;
+  height: 80%;
+  width: 63%;
+}
+.monitor.viewing > .monitorBottom {
+  padding: 0.5em;
+}
+
+.monitor.viewing > .monitorBottom > .monitorIndicator,
+.monitor.viewing > .monitorBottom > .monitorSpeaker {
+  width: 25px;
+  height: 25px;
+}
+.monitor.viewing > .monitorBottom > .monitorIndicator {
+  box-shadow: 0px 0px 3px 3px red;
+  border-width: 1px;
+}
+
+.monitor.viewing > .monitorTop > .monitorBrightness {
+  height: 10px;
+  width: 10px;
+}
+.monitor.viewing > .monitorScreen {
+  width: 95%;
+  justify-content: start;
+  align-items: baseline;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 1em;
+  gap: 0.5em;
+}
+.viewingHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.viewingCloseButton {
+  background-color: #ff6868;
+  padding: 0.5em;
+  border: 2px solid black;
+}
+.viewingCloseButton:focus,
+.viewingCloseButton:hover {
+  background-color: black;
+  color: #ff6868;
+  border-color: #ff6868;
+}
+
+.viewingFoundText {
+  text-align: center;
+}
+.viewingEntries {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.viewingEntriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.dexEntry {
+  flex: 1 1 50%;
+  min-width: max-content;
+}
+
+.totalCount {
+  border-top: 2px solid black;
+}
