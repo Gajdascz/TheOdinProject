@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-pokemon-blue-translucent);
+  border: 1px solid var(--color-pokemon-yellow);
+  border-radius: 10px;
+  padding: 0.5em;
+  width: fit-content;
+  color: var(--color-pokemon-yellow);
+}
+.sections {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  align-self: start;
+  gap: 1em;
+  padding: 0.5em;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+.sectionHeader {
+  border-bottom: 1px solid var(--color-pokemon-yellow);
+  padding-right: 2.5rem;
+}
+.endRunButton {
+  width: 90%;
+  background-color: var(--color-pokemon-blue);
+  color: var(--color-pokemon-yellow);
+  border: 3px solid var(--color-pokemon-yellow);
+  padding: 0.5em;
+}
+.endRunButton:hover {
+  background-color: var(--color-pokemon-yellow);
+  color: var(--color-pokemon-blue);
+  border-color: var(--color-pokemon-blue);
+  box-shadow: 0 0 3px 3px var(--color-pokemon-yellow);
+}
+
+.statWrapper {
+  display: flex;
+  justify-content: space-between;
+}
