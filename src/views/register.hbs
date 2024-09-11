@@ -1,0 +1,56 @@
+<section class="register-page">
+  <form method='POST' action="/user/register" class="card" enctype="multipart/form-data" data-handle="true">
+    <h1 class="card-header">Register</h1>
+    {{>field 
+        id='avatar'  
+        type='file' 
+        accept='image/*' 
+        placeholder='Profile Avatar' 
+        label='Profile Avatar' hideLabel=false
+    }}
+    {{>field 
+        id='email' 
+        type='text' 
+        placeholder='Email' 
+        label='Email' hideLabel=true
+    }} 
+    <div class="paired-fields">
+      {{>field 
+          id='first-name' 
+          type='text' 
+          placeholder='First Name' 
+          label='First name' hideLabel=true
+      }}
+      {{>field 
+          id='last-name' 
+          type='text' 
+          placeholder='Last Name'         
+          label='Last name' hideLabel=true
+      }} 
+    </div>
+    {{>field 
+        id='username' 
+        type='text' 
+        placeholder='Username*' 
+        required=true 
+        label='Username' hideLabel=true
+    }}
+    <div class="paired-fields">
+      {{>field 
+          id='password' 
+          type='password' 
+          required=true 
+          placeholder='Password*' 
+          label='Password' hideLabel=true}} 
+      {{>field 
+          id='confirm-password'
+          type='password'
+          required=true
+          placeholder='Confirm Password*' 
+          label='Confirm Password' hideLabel=true}}
+    </div>
+    <button class="primary">Submit</button>
+    <p class="card-secondary-text">Already Registered? <a href="/user/login">Login</a></p>
+  </form>
+  <script src="../scripts/formHandler/index.js" type="module"></script>
+</section>
