@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="scripts/validate.js" defer></script>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOP: Sign-up Form</title>
+</head>
+<body>
+  
+    <form class="signup-form" action="" method="post" onsubmit="return false;">
+
+        <div class="hero-container">
+          <img class="hero-img" width="800px" src="images/form-leaf-image.jpg" alt="">
+          <div class="odin-caption">
+            <img class="odin-logo" width="100px" src="images/odin-logo-lined.png">
+            <span>ODIN</span>
+          </div>
+          <div class="hero-footer">
+            <span>Photo by Halie West from <a href="https://unsplash.com/@haliewestphoto">unsplash</a></span>
+          </div>
+        </div>
+
+      <div class="form-content-container">
+
+        <div class="form-header-container">
+          <p class="form-header-text">
+            This is not a real online service!
+            You know you need something like this in your life
+            to help you realize your deepest dreams.
+            Sign up <em>now</em> to get started.<br><br>
+            You <em>know</em> you want to.
+        </p>
+        </div>
+
+        <h2 class="inputs-header">Let's do this!</h2>
+        <div class="form-inputs-container">
+          <div class="form-inputs-left">
+            <label for="first-name"> First Name
+              <input type="text" id="first-name" name="first-name" minlength="2">
+            </label>
+            <label for="email"> Email
+              <input type="email" id="email" name="email">
+            </label>
+            <label for="password"> Password
+              <input type="password" id="password" name="password">
+              <span class="password-match-error"></span>
+            </label>
+          </div>
+
+          <div class="form-inputs-right">
+            <label for="last-name"> Last Name
+              <input type="text" id="last-name" name="last-name" minlength="2">
+            </label>
+            <label for="phone-number"> Phone Number
+              <input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+            </label>
+            <label for="confirm-password"> Confirm Password
+              <input type="password" id="confirm-password" name="confirm-password">
+            </label>
+          </div>
+        </div>
+
+        <div class="form-buttons-container">
+          <button type="submit">Create Account</button>
+          <p>Already have an account? <a class="login-link" href="#">Log in</a></p>
+        </div>
+      </div>
+
+
+    </form>
+
+</body>
+</html>
+
+
