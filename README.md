@@ -4,16 +4,6 @@
   </a>
 </h1>
 
----
-
-<span align="center">
-  
-  **A comprehensive showcase of my journey through The Odin Project curriculum.**
-
-</span>
-
----
-
 <div align="center">
 
 Curriculum Progress
@@ -37,6 +27,12 @@ Curriculum Progress
 </div>
 
 ---
+
+<span align="center">
+  
+  **This repository aims to create a comprehensive and interactive showcasing of my journey through The Odin Project curriculum.**
+
+</span>
 
 ## 🚧 WIP 🚧
 
